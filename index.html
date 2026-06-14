@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Naaso Travels and Tours - Your Trusted Partner for Hajj, Umrah and Global Visa Services in Ghana. Expert visa processing, flight booking, and pilgrimage packages.">
-    <meta name="keywords" content="Hajj, Umrah, Visa Services, Travel Agency, Ghana, Pilgrimage, Dubai Visa, Saudi Visa, Flight Booking">
+    <meta name="description" content="Naaso Travels and Tours - Your Trusted Partner for Hajj, Umrah and Global Visa Services. Serving clients in Ghana and the United Kingdom. Expert visa processing, flight booking, and pilgrimage packages.">
+    <meta name="keywords" content="Hajj, Umrah, Visa Services, Travel Agency, Ghana, UK, United Kingdom, London, Pilgrimage, Dubai Visa, Saudi Visa, Flight Booking">
     <meta name="author" content="Naaso Travels and Tours">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Naaso Travels and Tours - Your Trusted Partner for Hajj, Umrah and Global Visa Services">
-    <meta property="og:description" content="Expert visa processing, flight booking, and pilgrimage packages. Contact us for premium travel services.">
+    <meta property="og:title" content="Naaso Travels and Tours - Hajj, Umrah & Global Visa Services | Ghana & UK">
+    <meta property="og:description" content="Expert visa processing, flight booking, and pilgrimage packages. Serving clients in Ghana and the United Kingdom. Contact us for premium travel services.">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_GH">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:locale:alternate" content="en_GH">
     
-    <title>Naaso Travels and Tours | Hajj, Umrah & Visa Services Ghana</title>
+    <title>Naaso Travels and Tours | Hajj, Umrah & Visa Services | Ghana & UK</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/naasotravellogo.PNG">
@@ -29,8 +30,170 @@
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ===== GEO BANNER ===== */
+        #uk-geo-banner {
+            display: none;
+            background: linear-gradient(90deg, #1e3a8a, #2563eb);
+            color: #fff;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 0.92rem;
+            position: relative;
+            z-index: 9999;
+            border-bottom: 2px solid #d4a853;
+        }
+        #uk-geo-banner .banner-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        #uk-geo-banner .banner-phone {
+            background: #d4a853;
+            color: #1e3a8a;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 20px;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        #uk-geo-banner .banner-phone:hover { background: #e8c97a; }
+        #uk-geo-banner .banner-close {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0.8;
+            padding: 4px 8px;
+        }
+        #uk-geo-banner .banner-close:hover { opacity: 1; }
+
+        /* ===== UK NAV PHONE PILL ===== */
+        .uk-nav-phone {
+            display: none;
+            align-items: center;
+            gap: 6px;
+            background: #d4a853;
+            color: #1e3a8a !important;
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .uk-nav-phone:hover { background: #e8c97a; }
+
+        /* ===== UK HERO OVERRIDE ===== */
+        .hero-subtitle-uk, .hero-title-uk, .hero-desc-uk, .hero-cta-uk { display: none; }
+
+        /* ===== DUAL OFFICE FOOTER ===== */
+        .footer-offices {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .office-block h5 {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #d4a853;
+            margin-bottom: 8px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .office-block p {
+            font-size: 0.88rem;
+            color: #cbd5e1;
+            margin: 0;
+            line-height: 1.6;
+        }
+        @media (max-width: 480px) {
+            .footer-offices { grid-template-columns: 1fr; }
+        }
+
+        /* ===== UK SERVICES SECTION ===== */
+        #uk-services-section {
+            display: none;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e3a5f 100%);
+            padding: 70px 0;
+        }
+        #uk-services-section .section-subtitle { color: #d4a853; }
+        #uk-services-section h2, #uk-services-section p { color: #fff; }
+        .uk-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .uk-service-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(212,168,83,0.3);
+            border-radius: 12px;
+            padding: 28px 24px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .uk-service-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.14);
+        }
+        .uk-service-card i {
+            font-size: 2rem;
+            color: #d4a853;
+            margin-bottom: 14px;
+        }
+        .uk-service-card h4 { color: #fff; font-size: 1.05rem; margin-bottom: 8px; font-family: 'Segoe UI', sans-serif; }
+        .uk-service-card p { color: #cbd5e1; font-size: 0.88rem; margin: 0; }
+
+        /* ===== FLOATING DUAL WHATSAPP ===== */
+        .floating-whatsapp-uk {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            z-index: 999;
+        }
+        .floating-whatsapp-uk a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+            white-space: nowrap;
+            text-decoration: none;
+        }
+        .floating-whatsapp-uk a:hover { background: #1ebe5d; }
+    </style>
 </head>
 <body>
+
+    <!-- ===== UK GEO BANNER ===== -->
+    <div id="uk-geo-banner">
+        <div class="banner-inner">
+            <span>🇬🇧 <strong>Serving clients across the United Kingdom</strong> — Book Hajj, Umrah & Visa services from the UK</span>
+            <a href="https://wa.me/447724025776?text=Hello%20Naaso%20Travels,%20I%20am%20in%20the%20UK%20and%20interested%20in%20your%20services" class="banner-phone" target="_blank">
+                <i class="fab fa-whatsapp"></i> UK: +44 7724 025776
+            </a>
+        </div>
+        <button class="banner-close" id="closeBanner" aria-label="Close banner">&times;</button>
+    </div>
     
     <!-- Navigation -->
     <nav class="navbar">
@@ -45,9 +208,20 @@
                 <li><a href="about.html" class="nav-link">About Us</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li class="nav-cta">
+                <!-- UK phone pill — shown only for UK visitors via JS -->
+                <li id="uk-nav-phone-li" style="display:none;">
+                    <a href="tel:+447724025776" class="uk-nav-phone">
+                        🇬🇧 +44 7724 025776
+                    </a>
+                </li>
+                <li class="nav-cta" id="nav-cta-default">
                     <a href="https://wa.me/233244845853" class="btn btn-primary" target="_blank">
                         <i class="fab fa-whatsapp"></i> Chat Now
+                    </a>
+                </li>
+                <li class="nav-cta" id="nav-cta-uk" style="display:none;">
+                    <a href="https://wa.me/447724025776" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat (UK)
                     </a>
                 </li>
             </ul>
@@ -69,19 +243,37 @@
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
-            <p class="hero-subtitle">Premier Travel & Pilgrimage Services in Ghana & UK</p>
-            <h1 class="hero-title">Your Trusted Partner for Hajj, Umrah and Global Visa Services</h1>
-            <p class="hero-description">
+            <!-- Default (Ghana) content -->
+            <p class="hero-subtitle" id="hero-subtitle-default">Premier Travel & Pilgrimage Services in Ghana & UK</p>
+            <h1 class="hero-title" id="hero-title-default">Your Trusted Partner for Hajj, Umrah and Global Visa Services</h1>
+            <p class="hero-description" id="hero-desc-default">
                 Experience seamless travel arrangements with Ghana's most trusted travel agency. 
                 From pilgrimage packages to global visa services, we make your journey to the holy cities 
                 and destinations around the world a reality.
             </p>
-            <div class="hero-buttons">
+            <div class="hero-buttons" id="hero-btns-default">
                 <a href="https://wa.me/233244845853?text=Hello%20Naaso%20Travels,%20I%20am%20interested%20in%20your%20services" class="btn btn-primary" target="_blank">
                     <i class="fab fa-whatsapp"></i> Start Your Journey
                 </a>
                 <a href="services.html" class="btn btn-secondary">
                     Explore Services
+                </a>
+            </div>
+
+            <!-- UK variant content — hidden by default, shown via JS -->
+            <p class="hero-subtitle" id="hero-subtitle-uk" style="display:none;">🇬🇧 Proudly Serving the United Kingdom & Ghana</p>
+            <h1 class="hero-title" id="hero-title-uk" style="display:none;">Your UK Partner for Hajj, Umrah & Global Visa Services</h1>
+            <p class="hero-description" id="hero-desc-uk" style="display:none;">
+                Based in Ghana with a dedicated UK presence, Naaso Travels helps UK clients book 
+                Hajj & Umrah pilgrimages, process visas, and arrange international flights — 
+                all with personalised, reliable support from start to finish.
+            </p>
+            <div class="hero-buttons" id="hero-btns-uk" style="display:none;">
+                <a href="https://wa.me/447724025776?text=Hello%20Naaso%20Travels,%20I%20am%20in%20the%20UK%20and%20interested%20in%20your%20services" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Chat With Us (UK)
+                </a>
+                <a href="tel:+447724025776" class="btn btn-secondary">
+                    <i class="fas fa-phone"></i> +44 7724 025776
                 </a>
             </div>
             
@@ -124,7 +316,8 @@
                     </p>
                     <p>
                         Our commitment to excellence, integrity, and personalized service has made us one of 
-                        Ghana's most trusted names in travel and pilgrimage services. We handle every detail 
+                        Ghana's most trusted names in travel and pilgrimage services — and we proudly serve 
+                        clients across the <strong>United Kingdom</strong> too. We handle every detail 
                         so you can focus on your spiritual journey.
                     </p>
                     
@@ -151,9 +344,44 @@
                             <div class="about-feature-icon">
                                 <i class="fas fa-check"></i>
                             </div>
-                            <span>Best Value</span>
+                            <span>Ghana & UK Based</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== UK SERVICES SECTION (shown only for UK visitors) ===== -->
+    <section id="uk-services-section">
+        <div class="container">
+            <p class="section-subtitle" style="color:#d4a853; font-weight:600; text-transform:uppercase; letter-spacing:3px; font-size:0.875rem;">For UK Clients</p>
+            <h2 class="section-title" style="color:#fff; font-size:clamp(2rem,4vw,2.8rem); margin-bottom:10px;">We've Got You Covered from the UK</h2>
+            <div class="divider"></div>
+            <p style="color:#cbd5e1; max-width:600px; margin:0 auto 10px; text-align:center;">
+                Living in the UK? You can book all our services directly. Our UK line is available 
+                to help you arrange everything from London or anywhere across Britain.
+            </p>
+            <div class="uk-services-grid">
+                <div class="uk-service-card">
+                    <i class="fas fa-kaaba"></i>
+                    <h4>Hajj & Umrah from UK</h4>
+                    <p>Full pilgrimage packages arranged for UK-based Muslims, including flights from UK airports.</p>
+                </div>
+                <div class="uk-service-card">
+                    <i class="fas fa-passport"></i>
+                    <h4>Visa Processing</h4>
+                    <p>Saudi, Dubai, and China visas processed for UK residents with fast turnaround.</p>
+                </div>
+                <div class="uk-service-card">
+                    <i class="fas fa-plane-departure"></i>
+                    <h4>Flight Bookings</h4>
+                    <p>Competitive flight deals from UK airports to destinations worldwide.</p>
+                </div>
+                <div class="uk-service-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h4>Dedicated UK Line</h4>
+                    <p>Reach our UK team directly on <a href="tel:+447724025776" style="color:#d4a853;">+44 7724 025776</a> or WhatsApp.</p>
                 </div>
             </div>
         </div>
@@ -366,292 +594,47 @@
             <div style="width: 80px; height: 4px; background: linear-gradient(90deg, var(--gold-accent), var(--gold-accent-light)); margin: 20px auto 50px; border-radius: 2px;"></div>
             
             <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px;">
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s;">
-                    <img src="assets/naaso/mecca.jpg" alt="Makkah" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/mecca2.jpg" alt="Kaaba" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/mecca3.jpg" alt="Madinah" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/kaaba1.jpg" alt="Pilgrims" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/kaaba2.jpg" alt="Group" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/kaaba3.jpg" alt="Travel" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/img1.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/img2.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/img3.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/img4.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/img5.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/img6.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/img7.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/img8.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/img9.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/img10.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/img11.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0583.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0584.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0585.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0586.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0587.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0588.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0589.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0590.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0591 (2).JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0592.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0593.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0594 (2).JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0597.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0598.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0599.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0600.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0601.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0602.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0603.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0604.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0605.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0606.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_0888.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
-                
-                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <img src="assets/naaso/IMG_8889.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
-                        <span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span>
-                    </div>
-                </div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s;"><img src="assets/naaso/mecca.jpg" alt="Makkah" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/mecca2.jpg" alt="Kaaba" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/mecca3.jpg" alt="Madinah" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/kaaba1.jpg" alt="Pilgrims" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/kaaba2.jpg" alt="Group" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/kaaba3.jpg" alt="Travel" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/img1.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/img2.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/img3.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/img4.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/img5.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/img6.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/img7.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/img8.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/img9.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/img10.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/img11.jpg" alt="Memory" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0583.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0584.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0585.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0586.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0587.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0588.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0589.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0590.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0591 (2).JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0592.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0593.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0594 (2).JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0597.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0598.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0599.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0600.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0601.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0602.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0603.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0604.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0605.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0606.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_0888.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
+                <div class="gallery-item fade-in" style="position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"><img src="assets/naaso/IMG_8889.JPG" alt="Gallery" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"><div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(212, 168, 83, 0.8)); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;"><span style="color: var(--white); font-size: 2rem;"><i class="fas fa-camera"></i></span></div></div>
             </div>
         </div>
     </section>
@@ -666,8 +649,13 @@
                     you plan your Hajj, Umrah, or any other travel destination.
                 </p>
                 <div class="cta-buttons">
-                    <a href="https://wa.me/233244845853?text=Hello%20Naaso%20Travels,%20I%20would%20like%20to%20inquire%20about%20your%20services" class="btn btn-primary" target="_blank">
+                    <!-- Default CTA -->
+                    <a href="https://wa.me/233244845853?text=Hello%20Naaso%20Travels,%20I%20would%20like%20to%20inquire%20about%20your%20services" class="btn btn-primary" target="_blank" id="cta-wa-default">
                         <i class="fab fa-whatsapp"></i> Chat With Us
+                    </a>
+                    <!-- UK CTA (hidden by default) -->
+                    <a href="https://wa.me/447724025776?text=Hello%20Naaso%20Travels,%20I%20am%20in%20the%20UK%20and%20would%20like%20to%20inquire" class="btn btn-primary" target="_blank" id="cta-wa-uk" style="display:none;">
+                        <i class="fab fa-whatsapp"></i> Chat With Us (UK)
                     </a>
                     <a href="contact.html" class="btn btn-secondary">
                         Contact Us
@@ -687,9 +675,9 @@
                         <span>Naaso Travels</span>
                     </div>
                     <p>
-                        Your trusted partner for Hajj, Umrah and Global Visa Services in Ghana. 
-                        We make your travel dreams a reality with professional, reliable, and 
-                        personalized service.
+                        Your trusted partner for Hajj, Umrah and Global Visa Services — 
+                        proudly serving clients in <strong>Ghana</strong> and across the <strong>United Kingdom</strong>.
+                        We make your travel dreams a reality with professional, reliable, and personalized service.
                     </p>
                     <div class="contact-social">
                         <a href="https://www.facebook.com/share/1GHa5ku6zf/?mibextid=wwXIfr" class="social-link" target="_blank" aria-label="Facebook">
@@ -698,7 +686,7 @@
                         <a href="https://www.tiktok.com/@naaso.travels" class="social-link" target="_blank" aria-label="TikTok">
                             <i class="fab fa-tiktok"></i>
                         </a>
-                        <a href="https://wa.me/233244845853" class="social-link" target="_blank" aria-label="WhatsApp">
+                        <a href="https://wa.me/233244845853" class="social-link" target="_blank" aria-label="WhatsApp Ghana">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -726,39 +714,25 @@
                 
                 <div class="footer-column">
                     <h4>Contact Info</h4>
-                    <ul class="footer-contact">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>City Galleria Mall, GL-152, 5922, Spintex Rd, Accra</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span><a href="tel:0202156145">0202156145</a></span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span><a href="tel:0244845853">0244845853</a></span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span><a href="tel:0243314474">0243314474</a></span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span><a href="tel:+447724025776">+447724025776</a></span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span><a href="mailto:info@naasotravels.com">info@naasotravels.com</a></span>
-                        </li>
-                        <li>
-                            <i class="fab fa-whatsapp"></i>
-                            <span><a href="https://wa.me/233244845853">+233 24 484 5853</a></span>
-                        </li>
-                        <li>
-                            <i class="fab fa-whatsapp"></i>
-                            <span><a href="https://wa.me/447724025776">+44 7724 025776</a></span>
-                        </li>
+                    <!-- Dual office display -->
+                    <div class="footer-offices">
+                        <div class="office-block">
+                            <h5>🇬🇭 Ghana Office</h5>
+                            <p>City Galleria Mall, GL-152, 5922, Spintex Rd, Accra</p>
+                        </div>
+                        <div class="office-block">
+                            <h5>🇬🇧 UK Office</h5>
+                            <p>Serving clients across the United Kingdom</p>
+                        </div>
+                    </div>
+                    <ul class="footer-contact" style="margin-top:14px;">
+                        <li><i class="fas fa-phone"></i><span><a href="tel:0202156145">0202156145</a></span></li>
+                        <li><i class="fas fa-phone"></i><span><a href="tel:0244845853">0244845853</a></span></li>
+                        <li><i class="fas fa-phone"></i><span><a href="tel:0243314474">0243314474</a></span></li>
+                        <li><i class="fas fa-phone"></i><span><a href="tel:+447724025776">🇬🇧 +44 7724 025776</a></span></li>
+                        <li><i class="fas fa-envelope"></i><span><a href="mailto:info@naasotravels.com">info@naasotravels.com</a></span></li>
+                        <li><i class="fab fa-whatsapp"></i><span><a href="https://wa.me/233244845853">+233 24 484 5853 (GH)</a></span></li>
+                        <li><i class="fab fa-whatsapp"></i><span><a href="https://wa.me/447724025776">+44 7724 025776 (UK)</a></span></li>
                     </ul>
                 </div>
             </div>
@@ -772,10 +746,17 @@
         </div>
     </footer>
     
-    <!-- Floating WhatsApp Button -->
-    <div class="floating-whatsapp">
+    <!-- Floating WhatsApp Button (Ghana — default) -->
+    <div class="floating-whatsapp" id="floating-wa-gh">
         <a href="https://wa.me/233244845853" target="_blank" aria-label="Chat on WhatsApp">
             <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Floating WhatsApp Button (UK — shown for UK visitors) -->
+    <div class="floating-whatsapp-uk" id="floating-wa-uk">
+        <a href="https://wa.me/447724025776?text=Hello%20Naaso%20Travels,%20I%20am%20in%20the%20UK" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp UK
         </a>
     </div>
     
@@ -794,12 +775,10 @@
     </div>
     
     <script>
-        // Lightbox functionality
+        // ===== LIGHTBOX =====
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const closeBtn = document.getElementById('close-lightbox');
-        
-        // Add click event to all gallery items
         document.querySelectorAll('.gallery-item').forEach(item => {
             item.style.cursor = 'pointer';
             item.addEventListener('click', function() {
@@ -809,28 +788,74 @@
                 document.body.style.overflow = 'hidden';
             });
         });
-        
-        // Close lightbox
         closeBtn.addEventListener('click', function() {
             lightbox.style.display = 'none';
             document.body.style.overflow = 'auto';
         });
-        
-        // Close on background click
         lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox) {
-                lightbox.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
+            if (e.target === lightbox) { lightbox.style.display = 'none'; document.body.style.overflow = 'auto'; }
         });
-        
-        // Close on Escape key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                lightbox.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
+            if (e.key === 'Escape') { lightbox.style.display = 'none'; document.body.style.overflow = 'auto'; }
         });
+
+        // ===== GEO DETECTION =====
+        (function() {
+            // Check if user already dismissed the banner this session
+            const bannerDismissed = sessionStorage.getItem('naaso_uk_banner_dismissed');
+
+            fetch('https://ipapi.co/json/')
+                .then(r => r.json())
+                .then(data => {
+                    if (data.country_code === 'GB') {
+                        applyUKExperience(bannerDismissed);
+                    }
+                })
+                .catch(() => {
+                    // Silently fail — default Ghana experience shown
+                });
+
+            function applyUKExperience(bannerDismissed) {
+                // 1. Show geo banner (unless dismissed)
+                if (!bannerDismissed) {
+                    document.getElementById('uk-geo-banner').style.display = 'block';
+                }
+
+                // 2. UK nav phone pill
+                document.getElementById('uk-nav-phone-li').style.display = 'list-item';
+
+                // 3. Swap nav CTA to UK WhatsApp
+                document.getElementById('nav-cta-default').style.display = 'none';
+                document.getElementById('nav-cta-uk').style.display = 'list-item';
+
+                // 4. Swap hero content
+                document.getElementById('hero-subtitle-default').style.display = 'none';
+                document.getElementById('hero-title-default').style.display = 'none';
+                document.getElementById('hero-desc-default').style.display = 'none';
+                document.getElementById('hero-btns-default').style.display = 'none';
+                document.getElementById('hero-subtitle-uk').style.display = 'block';
+                document.getElementById('hero-title-uk').style.display = 'block';
+                document.getElementById('hero-desc-uk').style.display = 'block';
+                document.getElementById('hero-btns-uk').style.display = 'flex';
+
+                // 5. Show UK services section
+                document.getElementById('uk-services-section').style.display = 'block';
+
+                // 6. Swap CTA section WhatsApp button
+                document.getElementById('cta-wa-default').style.display = 'none';
+                document.getElementById('cta-wa-uk').style.display = 'inline-flex';
+
+                // 7. Show UK floating WhatsApp, hide GH one
+                document.getElementById('floating-wa-gh').style.display = 'none';
+                document.getElementById('floating-wa-uk').style.display = 'block';
+            }
+
+            // Banner close button
+            document.getElementById('closeBanner').addEventListener('click', function() {
+                document.getElementById('uk-geo-banner').style.display = 'none';
+                sessionStorage.setItem('naaso_uk_banner_dismissed', '1');
+            });
+        })();
     </script>
 </body>
 </html>
