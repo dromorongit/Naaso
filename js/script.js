@@ -711,12 +711,19 @@ document.addEventListener('DOMContentLoaded', setActiveNav);
 
 // ===== NAASO FLIER POPUP SYSTEM =====
 (function () {
-  var fliers = [
+  var defaultFliers = [
     'assets/naaso/naasoflier1.jpg',
     'assets/naaso/naasoflier2.jpg',
     'assets/naaso/naasoflier3.jpg',
     'assets/naaso/naasoflier4.jpg'
   ];
+
+  var ukFliers = [
+    'assets/naaso/naasouk1.jpg',
+    'assets/naaso/naasouk2.jpg'
+  ];
+
+  var fliers = defaultFliers;
 
   var currentIndex = 0;
   var countdownTimer = null;
@@ -774,10 +781,23 @@ document.addEventListener('DOMContentLoaded', setActiveNav);
     if (e.key === 'Escape' && overlay.style.display === 'flex') { closeFlier(); }
   });
 
-  // Start: show first flier 10 seconds after page load
-  setTimeout(function () {
-    showFlier(0);
-  }, 10000);
+  // Detect country via ipapi.co then start flier sequence after 10s
+  fetch('https://ipapi.co/json/')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.country_code === 'GB') {
+        fliers = ukFliers;
+      }
+      setTimeout(function () {
+        showFlier(0);
+      }, 10000);
+    })
+    .catch(function() {
+      // If geo detection fails, fall back to default fliers
+      setTimeout(function () {
+        showFlier(0);
+      }, 10000);
+    });
 
 })();
 // ===== END FLIER POPUP SYSTEM =====
