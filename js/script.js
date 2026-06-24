@@ -801,3 +801,42 @@ document.addEventListener('DOMContentLoaded', setActiveNav);
 
 })();
 // ===== END FLIER POPUP SYSTEM =====
+
+// ===== VIDEO LIGHTBOX FOR GALLERY VIDEO TILES =====
+(function() {
+  var vLightbox = document.getElementById('video-lightbox');
+  var vCloseBtn = document.getElementById('close-video-lightbox');
+  var lbVideo   = document.getElementById('lightbox-video');
+  if (!vLightbox || !lbVideo) return;
+
+  function openVideoLightbox(src) {
+    lbVideo.src = src;
+    vLightbox.style.display = 'flex';
+    lbVideo.play();
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeVideoLightbox() {
+    lbVideo.pause();
+    lbVideo.src = '';
+    vLightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  document.querySelectorAll('.gallery-video-tile').forEach(function(tile) {
+    tile.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var src = tile.getAttribute('data-video');
+      if (src) openVideoLightbox(src);
+    });
+  });
+
+  vCloseBtn.addEventListener('click', closeVideoLightbox);
+  vLightbox.addEventListener('click', function(e) {
+    if (e.target === vLightbox) closeVideoLightbox();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && vLightbox.style.display === 'flex') closeVideoLightbox();
+  });
+})();
+// ===== END VIDEO LIGHTBOX =====
