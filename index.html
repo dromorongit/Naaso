@@ -765,6 +765,17 @@
         <span><i class="fas fa-arrow-up"></i></span>
     </div>
     
+    <!-- ===== FLIER POPUP MODAL SYSTEM ===== -->
+    <div id="flier-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:99999; align-items:center; justify-content:center; padding:20px;">
+      <div id="flier-modal" style="position:relative; max-width:520px; width:100%; border-radius:16px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.5); animation:flierPop 0.4s cubic-bezier(0.34,1.56,0.64,1);">
+        <button id="flier-close-btn" style="position:absolute; top:12px; right:12px; z-index:10; background:rgba(0,0,0,0.6); border:none; color:#fff; width:36px; height:36px; border-radius:50%; font-size:1.3rem; cursor:pointer; display:flex; align-items:center; justify-content:center; line-height:1; transition:background 0.2s;" aria-label="Close flier">&times;</button>
+        <img id="flier-img" src="" alt="Naaso Travels Offer" style="width:100%; height:auto; display:block; border-radius:16px;">
+        <div id="flier-next-bar" style="display:none; background:linear-gradient(90deg,#1e3a8a,#2563eb); padding:10px 20px; text-align:center; color:#fff; font-size:0.82rem; font-family:'Segoe UI',sans-serif;">
+          <span id="flier-next-label">Next offer in <strong id="flier-countdown">10</strong>s after closing</span>
+        </div>
+      </div>
+    </div>
+    
     <!-- JavaScript -->
     <script src="js/script.js"></script>
     

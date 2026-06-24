@@ -708,3 +708,76 @@ function setActiveNav() {
 
 // Initialize on load
 document.addEventListener('DOMContentLoaded', setActiveNav);
+
+// ===== NAASO FLIER POPUP SYSTEM =====
+(function () {
+  var fliers = [
+    'assets/naaso/naasoflier1.jpg',
+    'assets/naaso/naasoflier2.jpg',
+    'assets/naaso/naasoflier3.jpg',
+    'assets/naaso/naasoflier4.jpg'
+  ];
+
+  var currentIndex = 0;
+  var countdownTimer = null;
+  var overlay    = document.getElementById('flier-overlay');
+  var modal      = document.getElementById('flier-modal');
+  var closeBtn   = document.getElementById('flier-close-btn');
+  var flierImg   = document.getElementById('flier-img');
+  var nextBar    = document.getElementById('flier-next-bar');
+  var countdown  = document.getElementById('flier-countdown');
+
+  function showFlier(index) {
+    if (index >= fliers.length) return;
+    currentIndex = index;
+    flierImg.src = fliers[index];
+    overlay.style.display = 'flex';
+    // Reset modal animation
+    modal.style.animation = 'none';
+    modal.offsetHeight; // reflow
+    modal.style.animation = 'flierPop 0.4s cubic-bezier(0.34,1.56,0.64,1)';
+    // Show 'next' bar only if there is a next flier
+    if (index < fliers.length - 1) {
+      nextBar.style.display = 'block';
+      countdown.textContent = '10';
+    } else {
+      nextBar.style.display = 'none';
+    }
+  }
+
+  function closeFlier() {
+    overlay.style.display = 'none';
+    flierImg.src = '';
+    if (countdownTimer) { clearTimeout(countdownTimer); countdownTimer = null; }
+    // Schedule next flier 10 seconds after this one is closed
+    var next = currentIndex + 1;
+    if (next < fliers.length) {
+      countdownTimer = setTimeout(function () {
+        showFlier(next);
+      }, 10000);
+    }
+  }
+
+  // Close button
+  closeBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    closeFlier();
+  });
+
+  // Click outside modal image also closes
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) { closeFlier(); }
+  });
+
+  // ESC key closes
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.style.display === 'flex') { closeFlier(); }
+  });
+
+  // Start: show first flier 10 seconds after page load
+  setTimeout(function () {
+    showFlier(0);
+  }, 10000);
+
+})();
+// ===== END FLIER POPUP SYSTEM =====
